@@ -15,7 +15,7 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import UpcomingOutlinedIcon from '@mui/icons-material/UpcomingOutlined';
+import UpcomingOutlinedIcon from "@mui/icons-material/UpcomingOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -44,6 +44,9 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
+        position: "fixed",
+        left: 0,
+        height: "100%",
         "& .pro-sidebar-inner": {
           background: `${colors.primary[400]} !important`,
         },
@@ -55,6 +58,9 @@ const Sidebar = () => {
         },
         "& .pro-inner-item:hover": {
           color: "#868dfb !important",
+        },
+        "& .pro-menu": {
+          overflow: "hidden",
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
@@ -217,7 +223,6 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
           </Box>
         </Menu>
       </ProSidebar>
